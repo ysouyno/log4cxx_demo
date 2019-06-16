@@ -6,6 +6,9 @@
 #include "mfc_application_test.h"
 #include "mfc_application_testDlg.h"
 #include "afxdialogex.h"
+#include <log4cxx/logger.h>
+
+static log4cxx::LoggerPtr logger(log4cxx::Logger::getLogger("mfc_application_testDlg"));
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -19,12 +22,12 @@ class CAboutDlg : public CDialogEx
 public:
 	CAboutDlg();
 
-// Dialog Data
+	// Dialog Data
 #ifdef AFX_DESIGN_TIME
 	enum { IDD = IDD_ABOUTBOX };
 #endif
 
-	protected:
+protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
 
 // Implementation
@@ -99,6 +102,7 @@ BOOL CmfcapplicationtestDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 
 	// TODO: Add extra initialization here
+	LOG4CXX_INFO(logger, "OnInitDialog");
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }

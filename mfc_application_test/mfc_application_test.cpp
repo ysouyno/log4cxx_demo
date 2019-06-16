@@ -5,11 +5,14 @@
 #include "stdafx.h"
 #include "mfc_application_test.h"
 #include "mfc_application_testDlg.h"
+#include <log4cxx/logger.h>
+
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
 
+static log4cxx::LoggerPtr logger(log4cxx::Logger::getLogger("mfc_application_test"));
 
 // CmfcapplicationtestApp
 
@@ -27,6 +30,7 @@ CmfcapplicationtestApp::CmfcapplicationtestApp()
 
 	// TODO: add construction code here,
 	// Place all significant initialization in InitInstance
+	LOG4CXX_INFO(logger, "CmfcapplicationtestApp");
 }
 
 

@@ -11,16 +11,16 @@ log4cxx::LoggerPtr logger(log4cxx::Logger::getLogger("console"));
 
 int main()
 {
-    LOG4CXX_INFO(logger, "main");
+	LOG4CXX_INFO(logger, "main");
 
-    CString cstr(L"cstring");
-    LOG4CXX_INFO(logger, cstr.GetBuffer()); // need .GetBuffer()
+	CString cstr(L"cstring");
+	LOG4CXX_INFO(logger, cstr.GetBuffer()); // need .GetBuffer()
 
-    cstr = L"中文";
-    LOG4CXX_INFO(logger, cstr.GetBuffer());
+	cstr = L"中文";
+	LOG4CXX_INFO(logger, cstr.GetBuffer());
 
-    std::string str("string");
-    LOG4CXX_INFO(logger, str);
+	std::string str("string");
+	LOG4CXX_INFO(logger, str);
 
-    return 0;
+	return 0;
 }
