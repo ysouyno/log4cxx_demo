@@ -3,6 +3,9 @@
 
 #include "stdafx.h"
 #include "mfc_library_test.h"
+#include <log4cxx/logger.h>
+
+log4cxx::LoggerPtr logger(log4cxx::Logger::getLogger("mfc_dll"));
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -45,6 +48,7 @@ CmfclibrarytestApp::CmfclibrarytestApp()
 {
 	// TODO: add construction code here,
 	// Place all significant initialization in InitInstance
+	LOG4CXX_INFO(logger, "CmfclibrarytestApp");
 }
 
 

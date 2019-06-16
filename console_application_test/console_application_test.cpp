@@ -22,5 +22,11 @@ int main()
 	std::string str("string");
 	LOG4CXX_INFO(logger, str);
 
+	HMODULE hmod = LoadLibrary(L"mfc_library_test");
+	if (hmod)
+	{
+		FreeLibrary(hmod);
+	}
+
 	return 0;
 }
